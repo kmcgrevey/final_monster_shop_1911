@@ -1,0 +1,9 @@
+<h1 align= "center">Create Discount</h1>
+
+<center>
+  <%= render partial: 'form', locals:{path: discounts_path, method: :post,
+									button_text: 'Create Discount',
+									name: nil,
+									percent_off: nil,
+									bulk_minimum: nil }%>
+</center>

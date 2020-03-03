@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-	# Merchants
+  # Discounts
+  resources :discounts
+
+  # Merchants
   resources :merchants
 
 	# Items
