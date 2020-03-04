@@ -9,10 +9,10 @@ RSpec.describe 'As a Merchant Employee' do
       visit "/merchant_employee/merchants/#{@megs_shop.id}/discounts"
     end
 
-    xit 'I can create a new Discount' do
+    it 'I can create a new Discount' do
 
-      # visit "/merchant_employee/merchants/#{@megs_shop.id}/discounts/new"
-      click_link "Bulk Discounts"
+      # click_link "Bulk Discounts"
+      visit "/merchant_employee/merchants/#{@megs_shop.id}/discounts/new"
 
       name = "Buy 5 Get 10%"
       percent = 0.1

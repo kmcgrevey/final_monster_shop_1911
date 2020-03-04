@@ -13,6 +13,7 @@ class MerchantEmployee::DiscountsController < ApplicationController
   end
 
   def index
+    @merchant = Merchant.find(params[:id])
     @discounts = Discount.all
   end
 
