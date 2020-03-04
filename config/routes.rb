@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-	# Merchants
+  # # Discounts
+  # resources :discounts
+
+  # Merchants
   resources :merchants
 
 	# Items
@@ -61,6 +64,12 @@ Rails.application.routes.draw do
 		patch '/merchants/:id/items/:id/update', to: 'item_status#update'
     delete '/merchants/:id/items/:id', to: 'items#destroy'
     patch '/orders/:id', to: 'item_orders#update'
+
+    # get '/discounts/new', to: 'discounts#new'
+    get '/merchants/:id/discounts/new', to: 'discounts#new'
+    get '/merchants/:id/discounts', to: 'discounts#index'
+    post '/merchants/:id/discounts', to: 'discounts#create'
+    delete '/merchants/:id/discounts/:id', to: 'discounts#destroy'
   end
 
 	# Admin

@@ -1,0 +1,9 @@
+<h1 align= "center">Create Discount</h1>
+
+<center>
+  <%= render partial: 'form', locals:{path: "/merchant_employee/merchants/#{@merchant.id}/discounts", method: :post,
+							button_text: 'Create Discount',
+							name: nil,
+							percent_off: nil,
+							bulk_minimum: nil }%>
+</center>
