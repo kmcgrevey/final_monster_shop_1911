@@ -1,8 +1,10 @@
 <h2>Bulk Discounts</h2>
 
+<%= link_to "Create Discount", "/merchant_employee/merchants/#{@discounts.first.merchant_id}/discounts/new", method: :get %>
+
 <% @discounts.each do |discount| %>
   <section id='discount-<%= discount.id %>'>
-    <p>Discount Name: <%= discount.name %></p>
+    <h3><%= discount.name %></h3>
     <p>Percentage Off: <%= discount.percent_off %></p>
     <p>Bulk Minimum: <%= discount.bulk_minimum %></p>
   </section>

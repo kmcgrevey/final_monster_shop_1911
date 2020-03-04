@@ -1,12 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe 'As a Merchant Employee' do
-  describe 'When I visit the Discount new page' do
+  describe 'When I visit my bulk discount index page' do
 
-    it 'I can create a new Discount' do
+    before(:each) do
       @megs_shop = Merchant.create!(name: "Meg's Bike Shop", address: '123 Bike Rd.', city: 'Denver', state: 'CO', zip: 80203)
 
-      visit "/merchant_employee/merchants/#{@megs_shop.id}/discounts/new"
+      visit "/merchant_employee/merchants/#{@megs_shop.id}/discounts"
+    end
+
+    xit 'I can create a new Discount' do
+
+      # visit "/merchant_employee/merchants/#{@megs_shop.id}/discounts/new"
+      click_link "Bulk Discounts"
 
       name = "Buy 5 Get 10%"
       percent = 0.1
