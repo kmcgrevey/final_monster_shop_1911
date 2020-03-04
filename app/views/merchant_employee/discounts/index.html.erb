@@ -4,7 +4,7 @@
 
 <% @discounts.each do |discount| %>
   <section id='discount-<%= discount.id %>'>
-    <h3><%= discount.name %></h3>
+    <h3><%= discount.name %></h3><%= link_to "Delete", "/merchant_employee/merchants/#{@merchant.id}/discounts/#{discount.id}", method: :delete %>
     <p>Percentage Off: <%= discount.percent_off %></p>
     <p>Bulk Minimum: <%= discount.bulk_minimum %></p>
   </section>

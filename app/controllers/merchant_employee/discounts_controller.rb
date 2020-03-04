@@ -9,12 +9,21 @@ class MerchantEmployee::DiscountsController < ApplicationController
   def create
     @merchant = Merchant.find(params[:id])
     @discount = @merchant.discounts.create(discount_params)
+
     redirect_to "/merchant_employee/merchants/#{@merchant.id}/discounts"
   end
 
   def index
     @merchant = Merchant.find(params[:id])
     @discounts = Discount.all
+  end
+
+  def destroy
+    discount = Discount.find(params[:id])
+    @merchant = discount.merchant
+    discount.destroy
+
+    redirect_to "/merchant_employee/merchants/#{@merchant.id}/discounts"
   end
 
   private

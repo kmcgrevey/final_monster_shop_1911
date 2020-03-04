@@ -69,6 +69,7 @@ Rails.application.routes.draw do
     get '/merchants/:id/discounts/new', to: 'discounts#new'
     get '/merchants/:id/discounts', to: 'discounts#index'
     post '/merchants/:id/discounts', to: 'discounts#create'
+    delete '/merchants/:id/discounts/:id', to: 'discounts#destroy'
   end
 
 	# Admin
