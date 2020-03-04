@@ -30,7 +30,7 @@ RSpec.describe 'As a Merchant Employee' do
 
       within "#discount-#{new_discount.id}" do
         expect(page).to have_content(name)
-        expect(page).to have_content(percent)
+        expect(page).to have_content("10%")
         expect(page).to have_content(bulk_min)
       end
     end
