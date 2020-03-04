@@ -15,7 +15,7 @@ class MerchantEmployee::DiscountsController < ApplicationController
 
   def index
     @merchant = Merchant.find(params[:id])
-    @discounts = Discount.all
+    @discounts = @merchant.discounts.all
   end
 
   def destroy
