@@ -67,6 +67,7 @@ Rails.application.routes.draw do
 
     # get '/discounts/new', to: 'discounts#new'
     get '/merchants/:id/discounts/new', to: 'discounts#new'
+    get '/merchants/:id/discounts', to: 'discounts#index'
     post '/merchants/:id/discounts', to: 'discounts#create'
   end
 
